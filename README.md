@@ -15,8 +15,8 @@ This repository is a collection of my solutions to LeetCode problems. I have cat
 
 ## 🛠 Technologies Used
 
-- *Java*: The primary language for solutions.
-- *Python*: This is one of the easiest langauge, i prefer.
+- *Java*
+- *Python*
 ## 🤝 Contributions
 
 Contributions, feedback, and suggestions are welcome! If you'd like to improve or update a solution, feel free to open a pull request.
