@@ -1,0 +1,45 @@
+import heapq
+from collections import defaultdict
+
+class Solution:
+    def shortestDistanceAfterQueries(self, n, queries):
+        graph = defaultdict(list)
+        for i in range(n - 1):
+            graph[i].append((i + 1, 1))
+        
+        def dijkstra():
+            distances = [float('inf')] * n
+            distances[0] = 0
+            pq = [(0, 0)] 
+            
+            while pq:
+                curr_dist, node = heapq.heappop(pq)
+                
+                if curr_dist > distances[node]:
+                    continue
+                
+                for neighbor, weight in graph[node]:
+                    new_dist = curr_dist + weight
+                    if new_dist < distances[neighbor]:
+                        distances[neighbor] = new_dist
+                        heapq.heappush(pq, (new_dist, neighbor))
+            
+            return distances[n - 1]
+        
+        answer = []
+        for u, v in queries:
+            graph[u].append((v, 1))
+            answer.append(dijkstra())
+        
+        return answer
+
+solution = Solution()
+n = 5
+queries = [[2, 4], [0, 2], [0, 4]]
+print(solution.shortestDistanceAfterQueries(n, queries))  
+
+n = 4
+queries = [[0, 3], [0, 2]]
+print(solution.shortestDistanceAfterQueries(n, queries))  
+
+   
