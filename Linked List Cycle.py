@@ -8,8 +8,8 @@ class Solution:
         if not head or not head.next:
             return False
 
-        slow = head  # Slow pointer
-        fast = head  # Fast pointer
+        slow = head  
+        fast = head  
 
         while fast and fast.next:
             slow = slow.next          
@@ -17,4 +17,4 @@ class Solution:
 
             if slow == fast:          
                 return True
-        return False  # No cycle found
+        return False 
