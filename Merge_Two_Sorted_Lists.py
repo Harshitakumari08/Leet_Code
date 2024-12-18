@@ -21,5 +21,4 @@ class Solution:
             current.next = list1
         elif list2:
             current.next = list2
-
         return dummy.next
