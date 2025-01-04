@@ -4,7 +4,6 @@ class Solution:
 
         words = s.strip().split()
         return len(words[-1])
-
 solution = Solution()
 s1 = "Hello World"
 s2 = "   fly me   to   the moon  "
